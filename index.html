@@ -27,9 +27,9 @@
 </head>
 <body>
     <div>
-        <button><img class="icone" src="img/preto_e_branco.png" alt="" srcset=""></button>
-        <button><img class="icone" src="img/a_mais.png" alt=""></button>
-        <button><img class="icone" src="img/a_menos.png" alt=""></button>
+        <button id="preto-e-branco" ><img class="icone" src="img/preto_e_branco.png" alt="" srcset=""></button>
+        <button id="aumentar-texto"><img class="icone" src="img/a_mais.png" alt=""></button>
+        <button id="diminuir-texto"><img class="icone" src="img/a_menos.png" alt=""></button>
         <button><img class="icone" src="img/alto_contraste.png" alt=""></button>
         <button><img class="icone" src="img/libras.png" alt=""></button>
         <button><img class="icone" src="img/voz.png" alt=""></button>
@@ -38,4 +38,36 @@
     <a href="#">clique aqui</a>
     <img class="image" src="img/ACD.jpg" alt="">
 </body>
+<script type="text/javascript">
+    window.onload = function(){
+        var corpoDaPagina = document.querySelector('body');
+        var aumentarTexto = document.getElementById('aumentar-texto');
+        var diminuirTexto = document.getElementById('diminuir-texto');
+        
+        var fontSize = 100;
+
+        var qntAumentarDiminuir = 10;
+
+        aumentarTexto.addEventListener(
+            'click',function(event){
+                fontSize = fontSize + qntAumentarDiminuir;
+                corpoDaPagina.style.fontSize = fontSize + '%';
+            }
+        );
+
+        diminuirTexto.addEventListener(
+            'click', function(event){
+                fontSize = fontSize - qntAumentarDiminuir;
+                corpoDaPagina.style.fontSize = fontSize + '%';
+            }
+        );
+    
+    }
+
+    
+
+    document.getElementById('preto-e-branco').addEventListener('click',function(event){
+        document.body.classList.toggle('preto-e-branco');
+    });
+</script>
 </html>
