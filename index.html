@@ -9,6 +9,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 90vh;
+            justify-content: center;
         }
         .icone{
             height: 20px;
@@ -20,6 +22,10 @@
         .image{
             width: 400px;
         }
+        .alto-contraste{
+            background-color: black;
+            color: white;
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +36,7 @@
         <button id="preto-e-branco" ><img class="icone" src="img/preto_e_branco.png" alt="" srcset=""></button>
         <button id="aumentar-texto"><img class="icone" src="img/a_mais.png" alt=""></button>
         <button id="diminuir-texto"><img class="icone" src="img/a_menos.png" alt=""></button>
-        <button><img class="icone" src="img/alto_contraste.png" alt=""></button>
+        <button id="alternar-contraste"><img class="icone" src="img/alto_contraste.png" alt=""></button>
         <button><img class="icone" src="img/libras.png" alt=""></button>
         <button><img class="icone" src="img/voz.png" alt=""></button>
     </div>
@@ -69,5 +75,10 @@
     document.getElementById('preto-e-branco').addEventListener('click',function(event){
         document.body.classList.toggle('preto-e-branco');
     });
+    document.getElementById('alternar-contraste').addEventListener(
+        'click',function(){
+            document.body.classList.toggle('alto-contraste');
+        }
+    );
 </script>
 </html>
